@@ -96,6 +96,28 @@ body {
   z-index: 1;
 }
 
+.balls-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.balls-container-hero,
+.balls-container-skills {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.balls-container-hero:hover .balls-wrapper,
+.balls-container-skills:hover .balls-wrapper {
+  display: block;
+}
+
 /* Timeline styles */
 .timeline {
   position: relative;
@@ -339,199 +361,131 @@ section:nth-child(even) {
   font-size: 0.9rem;
 }
 
+/* Production Cards Grid */
 .productions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.prod-card {
-  background-color: var(--background-color);
-  padding: 2rem;
+.production-card {
+  background: var(--secondary-background);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(248, 102, 102, 0.2);
 }
 
-footer {
-  text-align: center;
-  padding: 3rem 2rem;
-  background-color: var(--secondary-background);
+.production-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--secondary-background);
+  border-bottom: 2px solid var(--primary-color);
+  cursor: pointer;
+  user-select: none;
 }
 
-footer a {
+.production-header h3 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin: 0;
+  flex: 1;
+}
+
+.production-card .expand-btn {
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.production-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+  padding: 0 1.5rem;
+}
+
+.production-card.expanded .production-content {
+  max-height: 1500px;
+  opacity: 1;
+  padding: 1.5rem;
+}
+
+.production-card.expanded .expand-btn {
+  transform: rotate(45deg);
+}
+
+.production-content h4 {
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Trispace', sans-serif;
+  font-weight: 600;
+}
+
+.production-content h4:first-child {
+  margin-top: 0;
+}
+
+.production-content p {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.production-link {
+  display: inline-block;
   color: var(--primary-color);
   text-decoration: none;
-  margin: 0 1rem;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Styles pour les filtres */
-.filter-container {
-  display: flex;
-  flex-direction: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem; 
-}
-
-.filter-btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background: var(--secondary-background);
-  color: var(--text-color);
-  cursor: pointer;
+  margin-top: 1rem;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 
-.filter-btn:hover {
-  background: var(--primary-color);
+.production-link:hover {
+  transform: translateX(5px);
+  text-shadow: 0 0 10px var(--primary-color);
 }
 
-.filter-btn.active {
-  background: var(--primary-color);
+.production-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(248, 102, 102, 0.2);
 }
 
-.folder {
-  background: var(--secondary-background);
-  border-radius: 8px 8px 0 0;
-  padding: 2rem;
-  margin-top: 2rem;
-  position: relative;
-  min-height: 400px;
-}
-
-.folder-tab {
-  position: absolute;
-  top: -30px;
-  left: 20px;
-  background: var(--secondary-background);
-  padding: 0.5rem 2rem;
-  border-radius: 8px 8px 0 0;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.folder-content {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 1rem 0;
-}
-
-.file-container {
-  display: flex;
-  gap: 2rem;
-  padding: 0.5rem;
-  flex-direction: column;
-}
-
-.file {
-  min-width: 300px;
-  background: var(--background-color);
-  border-radius: 4px;
-  padding: 1rem;
-  scroll-snap-align: center;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transform-origin: top;
-}
-
-.file-header{
-  display:flex;
-}
-
-.file-preview {
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(-10px);
-}
-
-.file-content {
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(20px);
-}
-
-.file.preview-visible .file-preview {
-  height: auto;
-  opacity: 1;
-  margin-bottom: 1rem;
-  transform: translateY(0);
-}
-
-.file.expanded {
-  min-width: 500px;
-  transform: scale(1.02);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  background: var(--secondary-background);
-}
-
-.file.expanded .file-content {
-  height: auto;
-  opacity: 1;
-  transform: translateY(0);
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.expand-btn{
-  font-size: 2rem;
-}
-
-.file.expanded .expand-btn {
-  transform: rotate(45deg);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Ajout d'un effet de hover sur les fichiers */
-.file:hover:not(.expanded) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Animation d'apparition des fichiers */
-@keyframes fileAppear {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+@media (max-width: 1024px) {
+  .productions-grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.file {
-  animation: fileAppear 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  animation-delay: calc(var(--file-index) * 100ms);
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
+  .productions-grid {
+    gap: 1rem;
   }
 
-  h2 {
-    font-size: 2rem;
+  .production-header {
+    padding: 1rem;
   }
 
-  section {
-    padding: 3rem 1rem;
+  .production-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .production-content {
+    font-size: 0.9rem;
   }
 }
-
-
 
 p {
   user-select: none;

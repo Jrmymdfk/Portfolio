@@ -1,0 +1,164 @@
+### **Refonte du site *Sac Papier (https://sacpapier.nc/)***
+
+### **Demande**
+
+Effectuer la refonte du site *Sac Papier* afin d’actualiser son image et de renforcer la cohérence entre le design du site et la charte graphique de l’entreprise.
+
+### **Réflexion**
+
+Le travail de refonte a impliqué :
+
+- L’identification des **valeurs esthétiques** de la marque (simplicité, écologie, authenticité).
+- L’intégration d’une **palette naturelle et texturée** évoquant les matériaux utilisés par l’entreprise.
+- L’adaptation du contenu aux standards UX/UI actuels, avec une logique centrée sur l’utilisateur.
+- L’amélioration de la navigation et de la présentation des produits, tout en respectant les contraintes techniques de performance et de référencement.
+
+### **Contrainte**
+
+- Respecter la **charte graphique existante** tout en introduisant des éléments de modernité.
+- Assurer la **légèreté du site** (temps de chargement minimal).
+- Maintenir une **compatibilité multi-supports** et un affichage responsive.
+
+### **Résultats**
+
+Un site visuellement cohérent, moderne et représentatif de la marque *Sac Papier*, intégrant les valeurs écologiques et artisanales de l’entreprise dans un design fonctionnel et attractif.
+
+## 🧩 **Rubrique : Refonte et intégration web professionnelle**
+
+### **Refonte du site *C’est Malin (https://cestmalin.nc/)***
+
+### **Demande**
+
+Effectuer une refonte complète du site *C’est Malin*, dans le but d’améliorer son attractivité visuelle et sa cohérence graphique. L’objectif principal consistait à **réimplémenter les éléments de la charte graphique** et de la **ligne artistique** de l’entreprise, tout en modernisant la structure du site pour une meilleure expérience utilisateur.
+
+### **Réflexion**
+
+L’analyse de l’identité visuelle existante a permis de dégager plusieurs axes de travail :
+
+- Préserver la palette de couleurs principale associée à la marque, afin de garantir la continuité visuelle et la reconnaissance immédiate du site.
+- Retravailler la typographie pour renforcer la lisibilité sur tous les supports (mobile, tablette, desktop).
+- Réorganiser la hiérarchie des contenus pour une navigation fluide et intuitive, tout en valorisant les produits phares.
+- Adapter la mise en page aux standards actuels du design web (grilles, espaces blancs, ergonomie visuelle).
+
+Cette réflexion s’est accompagnée d’une recherche sur la **cohérence sémiotique** entre le message commercial et les choix esthétiques.
+
+### **Contrainte**
+
+La refonte devait respecter :
+
+- Les **éléments fondamentaux de la charte graphique existante**, sans altérer l’identité de la marque.
+- Les **normes d’accessibilité** et de compatibilité multiplateforme.
+- Un **poids optimisé des médias** pour ne pas alourdir le chargement, particulièrement sur les connexions mobiles.
+
+### **Résultats**
+
+Une nouvelle page web ergonomique et harmonieuse, conforme à la ligne artistique de *C’est Malin*, avec une meilleure cohérence graphique et une expérience utilisateur optimisée.
+
+---
+
+---
+
+### Création scène 3D
+
+### **Demande**
+
+Implémenter une **scène 3D interactive** intégrant des éléments tels que des modèles FBX, des lumières, des matériaux, et une caméra dynamique.
+
+L’objectif final : pousser la scène 3D à s’intégrer harmonieusement dans un site web tout en restant utilisable par la majorité des navigateurs.
+
+### **Réflexion**
+
+Cette expérimentation a nécessité :
+
+- Une étude approfondie du **moteur de rendu WebGL** et des fonctionnalités natives de *Three.js*.
+- La création d’une **scène complète** (caméra, lumières, objets 3D importés, matériaux réalistes).
+- La mise en place d’**interactions utilisateur** (rotation, zoom, survol) en lien avec l’interface web.
+- Une réflexion sur l’équilibre entre **qualité graphique** et **performance**, afin de conserver la fluidité d’exécution sur divers environnements.
+
+### **Contrainte**
+
+- Les **capacités limitées des navigateurs** imposaient une gestion stricte des ressources (textures, lumières, modèles).
+- Assurer la **compatibilité avec les principaux navigateurs** (Chrome, Firefox, Safari, Edge).
+- Optimiser les performances pour des appareils à puissance graphique réduite.
+
+### **Résultats**
+
+Une **scène 3D interactive et fluide**, intégrée au sein d’un site web, démontrant la faisabilité d’interfaces immersives légères. Cette preuve a permis d’enrichir la maîtrise des technologies 3D sur le web et d’élargir les compétences en intégration multimédia avancée.
+
+### Animation dé 3D
+
+### **Demande**
+
+La demande consistait à **concevoir une application web 3D** permettant de représenter et d’animer un **dé tridimensionnel** à l’aide de la librairie **React Three JS**. L’objectif était de mettre en œuvre les principes fondamentaux de la 3D dans un environnement web, à travers la création d’une **scène interactive**, l’intégration d’un **modèle de dé avec plusieurs faces** et la simulation d’un **lancer aléatoire**, tout en garantissant une exécution fluide et accessible directement depuis un navigateur web moderne.
+
+### **Réflexion**
+
+Pour répondre à cette demande, j’ai choisi d’utiliser **React Three Fiber**, une extension de React permettant de manipuler facilement la librairie **Three.js**.
+
+Le concept de base reposait sur la création d’une **scène 3D**, d’une **caméra** et d’une **source lumineuse**, puis sur l’ajout d’un **cube texturé** représentant un dé.
+
+La réflexion a également porté sur l’ergonomie et la présentation visuelle : la scène devait être légère, réactive, et compatible avec la majorité des navigateurs pour offrir une expérience immersive sans compromettre la performance.
+
+### **Contrainte**
+
+La réalisation de cette application 3D a soulevé plusieurs contraintes techniques et pratiques :
+
+- **Optimisation des textures** : les fichiers PNG devaient être légers pour réduire les temps de chargement et éviter la pixellisation lors du rendu.
+- **Gestion des transformations 3D** : l’implémentation de rotations aléatoires réalistes nécessitait de maîtriser les transformations dans l’espace (axes X, Y, Z) sans déformation de la géométrie.
+- **Intégration et déploiement** : la mise en ligne via **Vercel** demandait un projet React fonctionnel, sans erreurs de compilation, et conforme aux exigences de build CI/CD.
+
+### **Résultats**
+
+Après analyse et mise en œuvre des éléments demandés, j’ai pu **réaliser un dé 3D entièrement fonctionnel et animé**, intégrant la charte graphique minimale et la logique de lancer aléatoire.
+
+Le projet a ensuite été **enrichi d’un module statistique** permettant d’afficher un **graphique en temps réel** représentant la fréquence d’apparition de chaque face du dé au fil des lancers.
+
+Cette fonctionnalité a permis d’apporter une dimension analytique au projet, alliant **3D, interactivité et visualisation de données**.
+
+Le résultat final est **accessible en ligne** à l’adresse suivante : https://jeremy-tp-de.vercel.app/.
+
+Ce projet démontre la maîtrise des **outils de modélisation 3D web**, de **l’animation interactive** via Three.js, ainsi que de la **mise en production** sur une plateforme de déploiement moderne.
+
+## **Application de conversion de devises en francs CFP**
+
+### **Demande**
+
+Créer une page web répertoriant en temps réel le taux de change de plusieurs devises étrangères, automatiquement converties en francs CFP (XPF).
+
+L’objectif est de fournir un affichage clair, réactif et visuellement cohérent, accessible depuis tout navigateur et responsive sur les différents supports (ordinateurs, tablettes, mobiles).
+
+---
+
+### **Réflexion**
+
+Pour répondre à cette demande, il a été nécessaire de concevoir une architecture dynamique reposant sur un framework JavaScript moderne (Vue.js ou React).
+
+La réflexion a porté sur la manière d’intégrer une API fiable de taux de change tout en proposant une interface attrayante et simple d’utilisation.
+
+Le choix s’est porté sur une approche asynchrone (via  `axios`) permettant de récupérer périodiquement les données actualisées de conversion.
+
+L’affichage a été pensé sous forme de tableau dynamique, avec rafraîchissement automatique..
+
+---
+
+### **Contrainte**
+
+La principale contrainte résidait dans la recherche d’une API gratuite et fiable fournissant des données actualisées en temps réel sur les taux de change.
+
+Certaines API limitaient le nombre de requêtes ou nécessitaient une clé d’accès payante.
+
+Il fallait également gérer les conversions indirectes vers le franc CFP, qui n’est pas toujours disponible directement dans les endpoints des API (nécessitant parfois un calcul intermédiaire via l’EUR).
+
+Enfin, la compatibilité front-end devait être assurée : affichage fluide, chargement rapide, et intégration responsive des drapeaux sans alourdir le rendu ni dégrader les performances sur mobile.
+
+---
+
+### **Résultat**
+
+Après l’analyse et la mise en œuvre, le projet a abouti à une **page de conversion fonctionnelle et interactive**.
+
+Les devises sont automatiquement converties en francs CFP, et les résultats sont affichés sous forme de tableau moderne avec les drapeaux correspondants.
+
+L’interface permet de visualiser instantanément les fluctuations et d’obtenir un aperçu clair de la valeur des devises courantes.
+
+Le rendu final offre une solution à la fois pédagogique, esthétique et techniquement maîtrisée, démontrant la capacité à interconnecter des services externes et à concevoir une interface web réactive.

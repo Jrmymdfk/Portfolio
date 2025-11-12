@@ -264,103 +264,69 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimeline();
 });
 
+// Gestion de l'expansion des cartes de production
 function initProductions() {
-  const files = document.querySelectorAll('.file');
-  let isScrolling = false;
-
-  // Ajouter un index pour l'animation séquentielle
-  files.forEach((file, index) => {
-    file.style.setProperty('--file-index', index);
-  });
-
-  function handleScroll(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !isScrolling) {
-        entry.target.classList.add('preview-visible');
-        
-        // Scroll plus doux
-        entry.target.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'nearest',
-          inline: 'center' 
-        });
-      } else {
-        if (!entry.target.classList.contains('expanded')) {
-          // Animation de fermeture plus douce
-          setTimeout(() => {
-            entry.target.classList.remove('preview-visible');
-          }, 200);
-        }
-      }
-    });
-  }
-
-  const observer = new IntersectionObserver(handleScroll, {
-    threshold: 0.7,
-    root: document.querySelector('.folder-content')
-  });
-
-  files.forEach(file => {
-    observer.observe(file);
-
-    file.addEventListener('click', () => {
-      const wasExpanded = file.classList.contains('expanded');
-      
-      // Fermer les autres fichiers avec animation
-      files.forEach(f => {
-        if (f !== file) {
-          f.classList.remove('expanded');
-          const btn = f.querySelector('.expand-btn');
-          btn.style.transform = 'rotate(0deg)';
-          setTimeout(() => {
-            btn.textContent = '+';
-          }, 250);
-        }
-      });
-
-      // Basculer l'état du fichier cliqué avec animation
-      if (!wasExpanded) {
-        file.classList.add('expanded');
-        const btn = file.querySelector('.expand-btn');
-        btn.style.transform = 'rotate(45deg)';
-        setTimeout(() => {
-          btn.textContent = '×';
-        }, 250);
-        
-        // Scroll vers le fichier ouvert
-        setTimeout(() => {
-          file.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'nearest' 
-          });
-        }, 100);
-      } else {
-        file.classList.remove('expanded');
-        const btn = file.querySelector('.expand-btn');
-        btn.style.transform = 'rotate(0deg)';
-        setTimeout(() => {
-          btn.textContent = '+';
-        }, 250);
-      }
-    });
-  });
-
-  // Optimisation du scroll
-  const folderContent = document.querySelector('.folder-content');
-  let scrollTimeout;
-
-  folderContent.addEventListener('scroll', () => {
-    isScrolling = true;
-    clearTimeout(scrollTimeout);
+  document.querySelectorAll('.production-card').forEach(card => {
+    const header = card.querySelector('.production-header');
     
-    scrollTimeout = setTimeout(() => {
-      isScrolling = false;
-    }, 150);
+    if (header) {
+      header.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        card.classList.toggle('expanded');
+      });
+    }
   });
 }
 
-// Ajouter à votre DOMContentLoaded existant
+// Gestion du hover sur les balls containers
+function initBallsHover() {
+  const ballsContainers = document.querySelectorAll('[class*="balls-container"]');
+  
+  ballsContainers.forEach(container => {
+    const ballsWrapper = container.querySelector('.balls-wrapper');
+    
+    if (ballsWrapper) {
+      // Par défaut, les balls sont cachées
+      ballsWrapper.style.display = 'none';
+      
+      // Au hover, afficher les balls
+      container.addEventListener('mouseenter', () => {
+        ballsWrapper.style.display = 'block';
+      });
+      
+      // Au survol quitté, cacher les balls
+      container.addEventListener('mouseleave', () => {
+        ballsWrapper.style.display = 'none';
+      });
+    }
+  });
+}
+
+// Initialisation au chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {
-  // ...existing code...
+  const containers = [
+    document.querySelector('.balls-container-hero'),
+    document.querySelector('.balls-container-skills')
+  ].filter(Boolean);
+
+  new MultiContainerBalls(containers, {
+    numBalls: 20,
+    blur: '30px',
+    maxSize: 250,
+    minSize: 100,
+    transferInterval: 7000
+  });
+
+  // Initialiser les productions
   initProductions();
+  
+  // Initialiser le hover des balls
+  initBallsHover();
+  
+  // Initialiser le filtre
+  initializeFilter();
+  
+  // Initialiser la timeline
+  initTimeline();
 });
