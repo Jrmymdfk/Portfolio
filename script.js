@@ -330,3 +330,146 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialiser la timeline
   initTimeline();
 });
+
+// --- Carousel + panneau de détail pour les preuves ---
+function initCarouselAndPanel() {
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  const items = Array.from(track.querySelectorAll('.carousel-item'));
+  const prevBtn = document.querySelector('.carousel-arrow.prev');
+  const nextBtn = document.querySelector('.carousel-arrow.next');
+  
+  if (items.length === 0) return;
+
+  let activeIndex = 0;
+  
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+  const wrap = (v, len) => ((v % len) + len) % len;
+
+  function updateClasses() {
+    items.forEach((it, i) => {
+      it.classList.remove('active', 'prev', 'next');
+      if (i === activeIndex) it.classList.add('active');
+      else if (i === activeIndex - 1 || (activeIndex === 0 && i === items.length - 1)) it.classList.add('prev');
+      else if (i === activeIndex + 1 || (activeIndex === items.length - 1 && i === 0)) it.classList.add('next');
+    });
+
+    const container = document.querySelector('.carousel');
+    const activeEl = items[activeIndex];
+    const firstItemLeft = items[0].offsetLeft;
+    const activeLeft = activeEl.offsetLeft;
+    const offsetPosition = activeLeft - firstItemLeft - 150;
+    
+    track.style.transform = `translateX(${ -offsetPosition }px)`;
+  }
+
+  function goTo(index) {
+    activeIndex = wrap(index, items.length);
+    updateClasses();
+  }
+
+  prevBtn && prevBtn.addEventListener('click', () => goTo(activeIndex - 1));
+  nextBtn && nextBtn.addEventListener('click', () => goTo(activeIndex + 1));
+
+  // Click sur une card : ouvrir panel latéral et charger contenu
+  const panel = document.getElementById('proof-panel');
+  const closeBtn = document.getElementById('proof-close');
+  
+  const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value || '';
+  };
+  
+  const setLink = (href) => {
+    const a = document.getElementById('proof-link');
+    if (a) {
+      if (href) { a.href = href; a.style.display = 'inline-block'; }
+      else { a.style.display = 'none'; }
+    }
+  };
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      goTo(i);
+
+      const title = item.dataset.title || '';
+      const demand = item.dataset.demand || '';
+      const reflection = item.dataset.reflection || '';
+      const constraint = item.dataset.constraint || '';
+      const results = item.dataset.results || '';
+      const link = item.dataset.link || '';
+
+      setText('proof-title', title);
+      setText('proof-demand', demand);
+      setText('proof-reflection', reflection);
+      setText('proof-constraint', constraint);
+      setText('proof-results', results);
+      setLink(link);
+
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  closeBtn && closeBtn.addEventListener('click', () => {
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+  });
+
+  // Fermer panel au clic en dehors
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !track.contains(e.target)) {
+      if (panel.classList.contains('open') && e.target !== closeBtn) {
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+      }
+    }
+  });
+
+  window.addEventListener('load', () => updateClasses());
+  window.addEventListener('resize', () => updateClasses());
+  updateClasses();
+}
+
+// Keyframe pour l'animation lettre par lettre
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes letterFlicker {
+    0% { opacity: 0; transform: scale(0.8) rotateY(90deg); }
+    50% { opacity: 1; transform: scale(1.1) rotateY(0deg); }
+    100% { opacity: 1; transform: scale(1) rotateY(0deg); }
+  }
+`;
+document.head.appendChild(style);
+
+// keep existing initialization but ensure initCarouselAndPanel is called
+document.addEventListener('DOMContentLoaded', () => {
+  const containers = [
+    document.querySelector('.balls-container-hero'),
+    document.querySelector('.balls-container-skills')
+  ].filter(Boolean);
+
+  new MultiContainerBalls(containers, {
+    numBalls: 20,
+    blur: '30px',
+    maxSize: 250,
+    minSize: 100,
+    transferInterval: 7000
+  });
+
+  // Initialiser les productions
+  initProductions();
+  
+  // Initialiser le hover des balls
+  initBallsHover();
+  
+  // Initialiser le filtre
+  initializeFilter();
+  
+  // Initialiser la timeline
+  initTimeline();
+  
+  // Initialiser carousel et panel
+  initCarouselAndPanel();
+});

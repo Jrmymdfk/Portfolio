@@ -132,119 +132,105 @@
   <!-- Productions -->
   <section id="productions" class="Gap">
     <h2>Productions – Preuves</h2>
-    
-    <div class="productions-grid">
-      
-      <!-- Sac Papier -->
-      <div class="production-card">
-        <div class="production-header">
-          <h3>Refonte du site Sac Papier</h3>
-          <span class="expand-btn">+</span>
-        </div>
-        <div class="production-content">
-          <h4>Demande</h4>
-          <p>Effectuer la refonte du site <em>Sac Papier</em> afin d'actualiser son image et de renforcer la cohérence entre le design du site et la charte graphique de l'entreprise.</p>
-          
-          <h4>Réflexion</h4>
-          <p>Le travail de refonte a impliqué l'identification des <strong>valeurs esthétiques</strong> de la marque (simplicité, écologie, authenticité), l'intégration d'une <strong>palette naturelle et texturée</strong> évoquant les matériaux utilisés par l'entreprise, l'adaptation du contenu aux standards UX/UI actuels, et l'amélioration de la navigation et de la présentation des produits.</p>
-          
-          <h4>Contrainte</h4>
-          <p>Respecter la <strong>charte graphique existante</strong> tout en introduisant des éléments de modernité, assurer la <strong>légèreté du site</strong> (temps de chargement minimal) et maintenir une <strong>compatibilité multi-supports</strong> avec affichage responsive.</p>
-          
-          <h4>Résultats</h4>
-          <p>Un site visuellement cohérent, moderne et représentatif de la marque <em>Sac Papier</em>, intégrant les valeurs écologiques et artisanales de l'entreprise dans un design fonctionnel et attractif.</p>
-          
-          <a href="https://sacpapier.nc/" target="_blank" class="production-link">Voir le site →</a>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow prev" aria-label="Précédent">‹</button>
+      <div class="carousel">
+        <div class="carousel-track">
+          <!-- Item 1 -->
+          <article class="carousel-item" data-title="Refonte du site Sac Papier"
+                   data-demand="Effectuer la refonte du site Sac Papier afin d'actualiser son image et de renforcer la cohérence entre le design et la charte graphique."
+                   data-reflection="Identification des valeurs esthétiques (simplicité, écologie, authenticité). Palette naturelle, UX centrée utilisateur, optimisation navigation et SEO."
+                   data-constraint="Respecter la charte graphique existante ; légèreté des assets ; affichage responsive."
+                   data-results="Site moderne, cohérent et représentatif des valeurs écologiques et artisanales."
+                   data-link="https://sacpapier.nc/">
+            <img class="thumb" src="public/images/sacpapier.png" alt="Sac Papier — aperçu">
+            <h3 class="item-title">Sac Papier</h3>
+            <div class="tech-bubbles">
+              <span>HTML</span><span>CSS</span><span>UX</span>
+            </div>
+          </article>
+
+          <!-- Item 2 -->
+          <article class="carousel-item" data-title="Refonte du site C'est Malin"
+                   data-demand="Refonte complète pour améliorer attractivité visuelle et cohérence graphique."
+                   data-reflection="Préservation palette, retravail typographique, hiérarchie des contenus et ergonomie moderne."
+                   data-constraint="Respect charte, normes d'accessibilité, optimisation médias."
+                   data-results="Page ergonomique conforme à la ligne artistique de C'est Malin."
+                   data-link="https://cestmalin.nc/">
+            <img class="thumb" src="public/images/cestmalin.png" alt="C'est Malin — aperçu">
+            <h3 class="item-title">C'est Malin</h3>
+            <div class="tech-bubbles">
+              <span>HTML</span><span>CSS</span><span>Design</span>
+            </div>
+          </article>
+
+          <!-- Item 3 -->
+          <article class="carousel-item" data-title="Scène 3D interactive"
+                   data-demand="Implémenter une scène 3D interactive (FBX, lumières, matériaux, caméra dynamique)."
+                   data-reflection="Étude WebGL / Three.js, interactions (rotation, zoom), qualité vs performance."
+                   data-constraint="Gestion stricte des ressources ; compatibilité navigateurs ; optimisation mobile."
+                   data-results="Scène 3D interactive et fluide intégrée au web."
+                   data-link="">
+            <img class="thumb" src="public/images/scene3d.png" alt="Scène 3D — aperçu">
+            <h3 class="item-title">Scène 3D</h3>
+            <div class="tech-bubbles">
+              <span>Three.js</span><span>WebGL</span><span>JS</span>
+            </div>
+          </article>
+
+          <!-- Item 4 -->
+          <article class="carousel-item" data-title="Animation Dé 3D"
+                   data-demand="Application web 3D animant un dé avec React Three Fiber et lancer aléatoire."
+                   data-reflection="React Three Fiber pour manipuler Three.js ; scène légère et réactive."
+                   data-constraint="Optimisation textures ; transformations 3D réalistes."
+                   data-results="Dé 3D animé + module statistique en ligne."
+                   data-link="https://jeremy-tp-de.vercel.app/">
+            <img class="thumb" src="public/images/de3d.png" alt="Dé 3D — aperçu">
+            <h3 class="item-title">Dé 3D</h3>
+            <div class="tech-bubbles">
+              <span>React</span><span>R3F</span><span>Three.js</span>
+            </div>
+          </article>
+
+          <!-- Item 5 -->
+          <article class="carousel-item" data-title="Conversion de devises en XPF"
+                   data-demand="Page listant taux de change convertis automatiquement en francs CFP (XPF)."
+                   data-reflection="Architecture dynamique, API de taux, rafraîchissement asynchrone."
+                   data-constraint="Recherche API fiable ; conversions indirectes via EUR ; compatibilité front."
+                   data-results="Page de conversion interactive et esthétique."
+                   data-link="">
+            <img class="thumb" src="public/images/conversion.png" alt="Conversion — aperçu">
+            <h3 class="item-title">Conversion devises</h3>
+            <div class="tech-bubbles">
+              <span>API</span><span>JS</span><span>UX</span>
+            </div>
+          </article>
         </div>
       </div>
-
-      <!-- C'est Malin -->
-      <div class="production-card">
-        <div class="production-header">
-          <h3>Refonte du site C'est Malin</h3>
-          <span class="expand-btn">+</span>
-        </div>
-        <div class="production-content">
-          <h4>Demande</h4>
-          <p>Effectuer une refonte complète du site <em>C'est Malin</em>, dans le but d'améliorer son attractivité visuelle et sa cohérence graphique. L'objectif consistait à <strong>réimplémenter les éléments de la charte graphique</strong> et de la <strong>ligne artistique</strong> de l'entreprise.</p>
-          
-          <h4>Réflexion</h4>
-          <p>L'analyse de l'identité visuelle existante a permis de préserver la palette de couleurs principale, retravailler la typographie, réorganiser la hiérarchie des contenus et adapter la mise en page aux standards actuels du design web, tout en garantissant la continuité visuelle et la reconnaissance immédiate du site.</p>
-          
-          <h4>Contrainte</h4>
-          <p>Respecter les <strong>éléments fondamentaux de la charte graphique existante</strong>, les <strong>normes d'accessibilité</strong> et de compatibilité multiplateforme, et assurer un <strong>poids optimisé des médias</strong> pour ne pas alourdir le chargement.</p>
-          
-          <h4>Résultats</h4>
-          <p>Une nouvelle page web ergonomique et harmonieuse, conforme à la ligne artistique de <em>C'est Malin</em>, avec une meilleure cohérence graphique et une expérience utilisateur optimisée.</p>
-          
-          <a href="https://cestmalin.nc/" target="_blank" class="production-link">Voir le site →</a>
-        </div>
-      </div>
-
-      <!-- Scène 3D -->
-      <div class="production-card">
-        <div class="production-header">
-          <h3>Création d'une scène 3D interactive</h3>
-          <span class="expand-btn">+</span>
-        </div>
-        <div class="production-content">
-          <h4>Demande</h4>
-          <p>Implémenter une <strong>scène 3D interactive</strong> intégrant des modèles FBX, des lumières, des matériaux et une caméra dynamique, utilisable sur tous les navigateurs.</p>
-          
-          <h4>Réflexion</h4>
-          <p>Cette expérimentation a nécessité une étude approfondie du <strong>moteur de rendu WebGL</strong> et des fonctionnalités natives de Three.js, la création d'une scène complète, la mise en place d'<strong>interactions utilisateur</strong> (rotation, zoom, survol) et une réflexion sur l'équilibre entre <strong>qualité graphique</strong> et <strong>performance</strong>.</p>
-          
-          <h4>Contrainte</h4>
-          <p>Les <strong>capacités limitées des navigateurs</strong> imposaient une gestion stricte des ressources, assurer la <strong>compatibilité avec les principaux navigateurs</strong> (Chrome, Firefox, Safari, Edge) et optimiser les performances pour les appareils à puissance graphique réduite.</p>
-          
-          <h4>Résultats</h4>
-          <p>Une <strong>scène 3D interactive et fluide</strong>, intégrée au sein d'un site web, démontrant la faisabilité d'interfaces immersives légères et enrichissant la maîtrise des technologies 3D sur le web.</p>
-        </div>
-      </div>
-
-      <!-- Dé 3D -->
-      <div class="production-card">
-        <div class="production-header">
-          <h3>Animation Dé 3D – React Three Fiber</h3>
-          <span class="expand-btn">+</span>
-        </div>
-        <div class="production-content">
-          <h4>Demande</h4>
-          <p>Concevoir une <strong>application web 3D</strong> permettant de représenter et d'animer un <strong>dé tridimensionnel</strong> à l'aide de React Three JS, avec lancer aléatoire et interface interactive.</p>
-          
-          <h4>Réflexion</h4>
-          <p>Le projet a utilisé <strong>React Three Fiber</strong> pour manipuler Three.js, créant une <strong>scène 3D</strong> complète avec caméra et lumière. La conception s'est également concentrée sur l'ergonomie : la scène devait être légère, réactive et compatible avec la majorité des navigateurs sans compromettre la performance.</p>
-          
-          <h4>Contrainte</h4>
-          <p><strong>Optimisation des textures</strong> (fichiers légers pour réduire les temps de chargement), <strong>gestion des transformations 3D</strong> réalistes, et <strong>intégration avec Vercel</strong> demandant un projet React conforme aux exigences de build CI/CD.</p>
-          
-          <h4>Résultats</h4>
-          <p>Un <strong>dé 3D entièrement fonctionnel et animé</strong>, enrichi d'un <strong>module statistique</strong> affichant en temps réel la fréquence d'apparition de chaque face. Résultat accessible en ligne : <a href="https://jeremy-tp-de.vercel.app/" target="_blank">jeremy-tp-de.vercel.app</a></p>
-        </div>
-      </div>
-
-      <!-- Conversion de devises -->
-      <div class="production-card">
-        <div class="production-header">
-          <h3>Application de conversion de devises en francs CFP</h3>
-          <span class="expand-btn">+</span>
-        </div>
-        <div class="production-content">
-          <h4>Demande</h4>
-          <p>Créer une page web répertoriant en temps réel le taux de change de plusieurs devises étrangères, automatiquement converties en francs CFP (XPF), avec affichage clair, réactif et responsive.</p>
-          
-          <h4>Réflexion</h4>
-          <p>La conception s'est basée sur une <strong>architecture dynamique</strong> reposant sur un framework JavaScript moderne, l'intégration d'une <strong>API fiable de taux de change</strong> et une approche <strong>asynchrone via axios</strong> pour récupérer périodiquement les données actualisées. L'affichage a été pensé sous forme de tableau dynamique avec rafraîchissement automatique.</p>
-          
-          <h4>Contrainte</h4>
-          <p>La recherche d'une <strong>API gratuite et fiable</strong>, la gestion des <strong>conversions indirectes</strong> vers le franc CFP (nécessitant parfois un calcul intermédiaire via l'EUR), et l'assurance de la <strong>compatibilité front-end</strong> avec affichage fluide et performance optimale sur mobile.</p>
-          
-          <h4>Résultats</h4>
-          <p>Une <strong>page de conversion fonctionnelle et interactive</strong>, affichant automatiquement les devises en francs CFP sous forme de tableau moderne avec drapeaux. Interface pédagogique, esthétique et techniquement maîtrisée, démontrant la capacité à interconnecter des services externes.</p>
-        </div>
-      </div>
-
+      <button class="carousel-arrow next" aria-label="Suivant">›</button>
     </div>
+
+    <!-- Panneau latéral de détail (ouvert au clic sur une card) -->
+    <aside id="proof-panel" aria-hidden="true">
+      <button id="proof-close" aria-label="Fermer">✕</button>
+      <div id="proof-content">
+        <header>
+          <h2 id="proof-title"></h2>
+          <a id="proof-link" href="#" target="_blank" rel="noopener noreferrer">Voir le site →</a>
+        </header>
+        <section>
+          <h4>Demande</h4>
+          <p id="proof-demand"></p>
+          <h4>Réflexion</h4>
+          <p id="proof-reflection"></p>
+          <h4>Contrainte</h4>
+          <p id="proof-constraint"></p>
+          <h4>Résultats</h4>
+          <p id="proof-results"></p>
+        </section>
+      </div>
+    </aside>
   </section>
   
   <footer>
