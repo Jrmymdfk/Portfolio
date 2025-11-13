@@ -10,23 +10,7 @@
     <header class="hero" class="Gap">
       <h1>Bienvenue, je suis Jérémy</h1>
       <p>Développeur web passionné qui aime transformer des idées en projets concrets 🚀</p> 
-      <a href="#about" class="btn">Découvrir</a> 
-      <div class="liste-keywords">
-        <ul class="keywords">
-          <li class="keyword-red">Front-End</li> 
-          <li class="keyword-purple">Back-End</li>
-          <li class="keyword-green">JavaSpring</li>
-          <li class="keyword-purple">Javascript</li>
-          <li class="keyword-purple">OPQuast</li>
-          <li class="keyword-green">Symfony</li>
-          <li class="keyword-red">Css</li>
-          <li class="keyword-red">HTML</li>
-          <li class="keyword-green">PIX</li>
-          <li class="keyword-red">Flutter</li>
-          <li class="keyword-purple">MYSQL</li>
-          <li class="keyword-green">Développeur WEB</li> 
-        </ul>
-      </div> 
+      <a href="#about" class="btn">Découvrir</a>  
     </header>
   </div>
 
@@ -46,8 +30,10 @@
           <span class="dot-year">2023</span>
         </div>
         <div class="timeline-content">
-          <h3>BUT Informatique</h3>
-          <p>IUT de Troyes - En cours</p>
+          <div class="timeline-content-wrapper">
+            <h3>BUT Informatique</h3>
+            <p>IUT de Troyes - En cours</p>
+          </div>
         </div>
       </div>
 
@@ -56,8 +42,10 @@
           <span class="dot-year">2021</span>
         </div>
         <div class="timeline-content">
-          <h3>BTS SIO SLAM</h3>
-          <p>Saint-Joseph - Obtenu</p>
+          <div class="timeline-content-wrapper">
+            <h3>BTS SIO SLAM</h3>
+            <p>Saint-Joseph - Obtenu</p>
+          </div>
         </div>
       </div>
       
@@ -66,8 +54,10 @@
           <span class="dot-year">2019</span>
         </div>
         <div class="timeline-content">
-          <h3>BAC STI2D</h3>
-          <p>Jules Garnier - Obtenu</p>
+          <div class="timeline-content-wrapper">
+            <h3>BAC STI2D</h3>
+            <p>Jules Garnier - Obtenu</p>
+          </div>
         </div>
       </div>
     </div>
@@ -210,24 +200,45 @@
       </div>
       <button class="carousel-arrow next" aria-label="Suivant">›</button>
     </div>
+    <div id="proof-overlay-black">
+    </div>
 
     <!-- Panneau latéral de détail (ouvert au clic sur une card) -->
+    <div id="proof-overlay">
+      <div id="overlay-image-container">
+        <img id="overlay-image" src="" alt="Proof image" style="display: none;">
+      </div>
+    </div>
+    <div id="overlay-keywords"><ul class="keywords">
+          <li class="keyword-red">Front-End</li> 
+          <li class="keyword-purple">Back-End</li>
+          <li class="keyword-green">JavaSpring</li>
+          <li class="keyword-purple">Javascript</li>
+          <li class="keyword-purple">OPQuast</li>
+          <li class="keyword-green">Symfony</li>
+          <li class="keyword-red">Css</li>
+          <li class="keyword-red">HTML</li>
+          <li class="keyword-green">PIX</li>
+          <li class="keyword-red">Flutter</li>
+          <li class="keyword-purple">MYSQL</li>
+          <li class="keyword-green">Développeur WEB</li> 
+        </ul></div>
     <aside id="proof-panel" aria-hidden="true">
       <button id="proof-close" aria-label="Fermer">✕</button>
       <div id="proof-content">
         <header>
-          <h2 id="proof-title"></h2>
-          <a id="proof-link" href="#" target="_blank" rel="noopener noreferrer">Voir le site →</a>
+          <h2 class="title-anime" id="proof-title"></h2>
         </header>
         <section>
-          <h4>Demande</h4>
+          <h4 class="title-anime">Demande</h4>
           <p id="proof-demand"></p>
-          <h4>Réflexion</h4>
+          <h4 class="title-anime">Réflexion</h4>
           <p id="proof-reflection"></p>
-          <h4>Contrainte</h4>
+          <h4 class="title-anime">Contrainte</h4>
           <p id="proof-constraint"></p>
-          <h4>Résultats</h4>
+          <h4 class="title-anime">Résultats</h4>
           <p id="proof-results"></p>
+          <a id="proof-link" href="#" target="_blank" rel="noopener noreferrer">Voir le site →</a>
         </section>
       </div>
     </aside>

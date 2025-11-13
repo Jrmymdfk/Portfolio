@@ -375,6 +375,9 @@ function initCarouselAndPanel() {
   // Click sur une card : ouvrir panel latéral et charger contenu
   const panel = document.getElementById('proof-panel');
   const closeBtn = document.getElementById('proof-close');
+  const overlay = document.getElementById('proof-overlay');
+  const overlay1 = document.getElementById('proof-overlay-black');
+  const overlayKeywords = document.getElementById('overlay-keywords');
   
   const setText = (id, value) => {
     const el = document.getElementById(id);
@@ -399,6 +402,7 @@ function initCarouselAndPanel() {
       const constraint = item.dataset.constraint || '';
       const results = item.dataset.results || '';
       const link = item.dataset.link || '';
+      const thumbImage = item.querySelector('.thumb');
 
       setText('proof-title', title);
       setText('proof-demand', demand);
@@ -407,14 +411,37 @@ function initCarouselAndPanel() {
       setText('proof-results', results);
       setLink(link);
 
+      // Afficher l'image dans l'overlay
+      const overlayImage = document.getElementById('overlay-image');
+      if (thumbImage && thumbImage.src) {
+        overlayImage.src = thumbImage.src;
+        overlayImage.style.display = 'block';
+      }
+
       panel.classList.add('open');
       panel.setAttribute('aria-hidden', 'false');
+      
+      // Activer overlay et keywords
+      overlay.classList.add('active');
+      overlay1.classList.add('active');
+      overlayKeywords.classList.add('active');
+      
+      // Cloner et afficher les keywords dans l'overlay
+      const originalKeywords = document.querySelector('.keywords');
+      if (originalKeywords) {
+        const clonedKeywords = originalKeywords.cloneNode(true);
+        overlayKeywords.innerHTML = '';
+        overlayKeywords.appendChild(clonedKeywords);
+      }
     });
   });
 
   closeBtn && closeBtn.addEventListener('click', () => {
     panel.classList.remove('open');
     panel.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('active');
+    overlay1.classList.remove('active');
+    overlayKeywords.classList.remove('active');
   });
 
   // Fermer panel au clic en dehors
@@ -423,6 +450,9 @@ function initCarouselAndPanel() {
       if (panel.classList.contains('open') && e.target !== closeBtn) {
         panel.classList.remove('open');
         panel.setAttribute('aria-hidden', 'true');
+        overlay.classList.remove('active');
+        overlay1.classList.remove('active');
+        overlayKeywords.classList.remove('active');
       }
     }
   });
