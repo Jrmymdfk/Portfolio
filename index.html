@@ -6,12 +6,49 @@
   <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
+  <!-- Navbar Sticky -->
+  <nav class="navbar-sticky">
+    <div class="navbar-content">
+      <div class="navbar-logo">
+        <span class="logo-text">J</span><span class="logo-text">e</span><span class="logo-text">r</span><span class="logo-text">é</span><span class="logo-text">m</span><span class="logo-text">y</span>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="#about" class="nav-link">À propos</a></li>
+        <li><a href="#skills" class="nav-link">Compétences</a></li>
+        <li><a href="#productions" class="nav-link">Productions</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="balls-container-hero">
     <header class="hero" class="Gap">
-      <h1>Bienvenue, je suis Jérémy</h1>
-      <p>Développeur web passionné qui aime transformer des idées en projets concrets 🚀</p> 
-      <a href="#about" class="btn">Découvrir</a>  
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Bienvenue, je suis Jérémy</h1>
+          <p>Développeur web passionné qui aime transformer des idées en projets concrets 🚀</p> 
+          <a href="#about" class="btn">Découvrir</a>
+        </div>
+        <div class="profile-section">
+          <div class="profile-container">
+            <img src="public/images/background.jpg" alt="Background" class="profile-bg">
+            <img src="public/images/clean_color.png" alt="Profil BW" class="profile-bw">
+            <img src="public/images/clean.png" alt="Profil Color" class="profile-color">
+          </div>
+        </div>
+      </div>
     </header>
+  </div>
+
+  <!-- Decoration text animated -->
+  <div class="animated-words-container">
+    <div class="words word-who">
+      <span>W</span>
+      <span>H</span>
+      <span>O</span>
+      <span>I</span>
+      <span>A</span>
+      <span>M</span>
+    </div>
   </div>
 
   <!-- Qui suis-je -->
@@ -119,6 +156,20 @@
     </section>
   </div>
 
+  <!-- Decoration text animated -->
+  <div class="animated-words-container">
+    <div class="words word-work-1">
+      <span>M</span>
+      <span>Y</span>
+    </div>
+    <div class="words word-work-2">
+      <span>W</span>
+      <span>O</span>
+      <span>R</span>
+      <span>K</span>
+    </div>
+  </div>
+
   <!-- Productions -->
   <section id="productions" class="Gap">
     <h2>Productions – Preuves</h2>
@@ -129,10 +180,10 @@
         <div class="carousel-track">
           <!-- Item 1 -->
           <article class="carousel-item" data-title="Refonte du site Sac Papier"
-                   data-demand="Effectuer la refonte du site Sac Papier afin d'actualiser son image et de renforcer la cohérence entre le design et la charte graphique."
-                   data-reflection="Identification des valeurs esthétiques (simplicité, écologie, authenticité). Palette naturelle, UX centrée utilisateur, optimisation navigation et SEO."
-                   data-constraint="Respecter la charte graphique existante ; légèreté des assets ; affichage responsive."
-                   data-results="Site moderne, cohérent et représentatif des valeurs écologiques et artisanales."
+                   data-demand="Effectuer la refonte du site Sac Papier afin d'actualiser son image et de renforcer la cohérence entre le design du site et la charte graphique de l'entreprise."
+                   data-reflection="Le travail de refonte a impliqué : l'identification des valeurs esthétiques de la marque (simplicité, écologie, authenticité), l'intégration d'une palette naturelle et texturée évoquant les matériaux utilisés par l'entreprise, l'adaptation du contenu aux standards UX/UI actuels avec une logique centrée sur l'utilisateur, et l'amélioration de la navigation et de la présentation des produits."
+                   data-constraint="Respecter la charte graphique existante tout en introduisant des éléments de modernité. Assurer la légèreté du site (temps de chargement minimal). Maintenir une compatibilité multi-supports et un affichage responsive."
+                   data-results="Un site visuellement cohérent, moderne et représentatif de la marque Sac Papier, intégrant les valeurs écologiques et artisanales de l'entreprise dans un design fonctionnel et attractif."
                    data-link="https://sacpapier.nc/">
             <img class="thumb" src="public/images/sacpapier.png" alt="Sac Papier — aperçu">
             <h3 class="item-title">Sac Papier</h3>
@@ -143,10 +194,10 @@
 
           <!-- Item 2 -->
           <article class="carousel-item" data-title="Refonte du site C'est Malin"
-                   data-demand="Refonte complète pour améliorer attractivité visuelle et cohérence graphique."
-                   data-reflection="Préservation palette, retravail typographique, hiérarchie des contenus et ergonomie moderne."
-                   data-constraint="Respect charte, normes d'accessibilité, optimisation médias."
-                   data-results="Page ergonomique conforme à la ligne artistique de C'est Malin."
+                   data-demand="Effectuer une refonte complète du site C'est Malin, dans le but d'améliorer son attractivité visuelle et sa cohérence graphique. L'objectif principal consistait à réimplémenter les éléments de la charte graphique et de la ligne artistique de l'entreprise."
+                   data-reflection="L'analyse de l'identité visuelle existante a permis de dégager plusieurs axes de travail : préserver la palette de couleurs principale associée à la marque pour garantir la continuité visuelle, retravailler la typographie pour renforcer la lisibilité sur tous les supports, réorganiser la hiérarchie des contenus pour une navigation fluide et intuitive, et adapter la mise en page aux standards actuels du design web."
+                   data-constraint="Les éléments fondamentaux de la charte graphique existante doivent être respectés sans altérer l'identité de la marque. Les normes d'accessibilité et de compatibilité multiplateforme sont obligatoires. Un poids optimisé des médias est requis pour ne pas alourdir le chargement."
+                   data-results="Une nouvelle page web ergonomique et harmonieuse, conforme à la ligne artistique de C'est Malin, avec une meilleure cohérence graphique et une expérience utilisateur optimisée."
                    data-link="https://cestmalin.nc/">
             <img class="thumb" src="public/images/cestmalin.png" alt="C'est Malin — aperçu">
             <h3 class="item-title">C'est Malin</h3>
@@ -157,10 +208,10 @@
 
           <!-- Item 3 -->
           <article class="carousel-item" data-title="Scène 3D interactive"
-                   data-demand="Implémenter une scène 3D interactive (FBX, lumières, matériaux, caméra dynamique)."
-                   data-reflection="Étude WebGL / Three.js, interactions (rotation, zoom), qualité vs performance."
-                   data-constraint="Gestion stricte des ressources ; compatibilité navigateurs ; optimisation mobile."
-                   data-results="Scène 3D interactive et fluide intégrée au web."
+                   data-demand="Concevoir une scène 3D interactive et fluide, intégrée directement au sein d'un site web, démontrant la faisabilité d'interfaces immersives légères et accessibles depuis un navigateur moderne."
+                   data-reflection="Utilisation de la librairie Three.js pour la création d'une scène 3D complet avec éclairage, textures et modèles 3D. L'approche a privilégié la légèreté du rendu pour assurer une expérience fluide sur divers appareils, tout en recherchant un équilibre entre qualité visuelle et performance. La structure du projet a été pensée pour permettre l'extension future des fonctionnalités 3D."
+                   data-constraint="Les capacités limitées des navigateurs imposaient une gestion stricte des ressources (textures, lumières, modèles). Assurer la compatibilité avec les principaux navigateurs (Chrome, Firefox, Safari, Edge). Optimiser les performances pour des appareils à puissance graphique réduite."
+                   data-results="Une scène 3D interactive et fluide, intégrée au sein d'un site web, démontrant la faisabilité d'interfaces immersives légères. Cette preuve a permis d'enrichir la maîtrise des technologies 3D sur le web et d'élargir les compétences en intégration multimédia avancée."
                    data-link="">
             <img class="thumb" src="public/images/scene3d.png" alt="Scène 3D — aperçu">
             <h3 class="item-title">Scène 3D</h3>
@@ -171,10 +222,10 @@
 
           <!-- Item 4 -->
           <article class="carousel-item" data-title="Animation Dé 3D"
-                   data-demand="Application web 3D animant un dé avec React Three Fiber et lancer aléatoire."
-                   data-reflection="React Three Fiber pour manipuler Three.js ; scène légère et réactive."
-                   data-constraint="Optimisation textures ; transformations 3D réalistes."
-                   data-results="Dé 3D animé + module statistique en ligne."
+                   data-demand="Concevoir une application web 3D permettant de représenter et d'animer un dé tridimensionnel à l'aide de la librairie React Three JS. L'objectif était de mettre en œuvre les principes fondamentaux de la 3D dans un environnement web, à travers la création d'une scène interactive, l'intégration d'un modèle de dé avec plusieurs faces et la simulation d'un lancer aléatoire, tout en garantissant une exécution fluide."
+                   data-reflection="Choix de React Three Fiber, une extension de React permettant de manipuler facilement la librairie Three.js. Création d'une scène 3D avec caméra et source lumineuse, puis ajout d'un cube texturé représentant un dé. La réflexion a porté sur l'ergonomie et la présentation visuelle : la scène devait être légère, réactive, et compatible avec la majorité des navigateurs pour offrir une expérience immersive sans compromettre la performance."
+                   data-constraint="Optimisation des textures pour réduire les temps de chargement. Gestion des transformations 3D et rotations aléatoires réalistes. Intégration et déploiement via Vercel demandant un projet React fonctionnel sans erreurs de compilation."
+                   data-results="Réalisation d'un dé 3D entièrement fonctionnel et animé, enrichi d'un module statistique affichant un graphique en temps réel représentant la fréquence d'apparition de chaque face. Ce projet démontre la maîtrise des outils de modélisation 3D web, de l'animation interactive via Three.js et de la mise en production. Accessible à : https://jeremy-tp-de.vercel.app/"
                    data-link="https://jeremy-tp-de.vercel.app/">
             <img class="thumb" src="public/images/de3d.png" alt="Dé 3D — aperçu">
             <h3 class="item-title">Dé 3D</h3>
@@ -185,10 +236,10 @@
 
           <!-- Item 5 -->
           <article class="carousel-item" data-title="Conversion de devises en XPF"
-                   data-demand="Page listant taux de change convertis automatiquement en francs CFP (XPF)."
-                   data-reflection="Architecture dynamique, API de taux, rafraîchissement asynchrone."
-                   data-constraint="Recherche API fiable ; conversions indirectes via EUR ; compatibilité front."
-                   data-results="Page de conversion interactive et esthétique."
+                   data-demand="Créer une page web répertoriant en temps réel le taux de change de plusieurs devises étrangères, automatiquement converties en francs CFP (XPF). L'objectif est de fournir un affichage clair, réactif et visuellement cohérent, accessible depuis tout navigateur et responsive sur les différents supports (ordinateurs, tablettes, mobiles)."
+                   data-reflection="Architecture dynamique reposant sur un framework JavaScript moderne (Vue.js ou React). Intégration d'une API fiable de taux de change avec une interface attrayante et simple d'utilisation. Approche asynchrone via axios permettant de récupérer périodiquement les données actualisées de conversion. L'affichage a été pensé sous forme de tableau dynamique avec rafraîchissement automatique."
+                   data-constraint="Recherche d'une API gratuite et fiable fournissant des données actualisées en temps réel sur les taux de change. Gestion des conversions indirectes vers le franc CFP, qui n'est pas toujours disponible directement dans les endpoints des API. Compatibilité front-end assurée : affichage fluide, chargement rapide, intégration responsive des drapeaux sans alourdir le rendu."
+                   data-results="Page de conversion fonctionnelle et interactive. Les devises sont automatiquement converties en francs CFP, affichées sous forme de tableau moderne avec les drapeaux correspondants. L'interface permet de visualiser instantanément les fluctuations et d'obtenir un aperçu clair de la valeur des devises courantes. Le rendu final offre une solution pédagogique, esthétique et techniquement maîtrisée, démontrant la capacité à interconnecter des services externes et concevoir une interface web réactive."
                    data-link="">
             <img class="thumb" src="public/images/conversion.png" alt="Conversion — aperçu">
             <h3 class="item-title">Conversion devises</h3>
@@ -225,6 +276,9 @@
         </ul></div>
     <aside id="proof-panel" aria-hidden="true">
       <button id="proof-close" aria-label="Fermer">✕</button>
+      <div id="proof-panel-image-mobile">
+        <img id="proof-panel-image" src="" alt="Proof image" style="display: none;">
+      </div>
       <div id="proof-content">
         <header>
           <h2 class="title-anime" id="proof-title"></h2>
@@ -244,12 +298,33 @@
     </aside>
   </section>
   
-  <footer>
-    <h2>Retrouvez-moi</h2>
-    <p>
-      <a href="https://github.com/ton-compte" target="_blank">GitHub</a> |
-      <a href="https://linkedin.com/in/ton-compte" target="_blank">LinkedIn</a>
-    </p>
+  <footer class="footer-custom">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Jérémy</h3>
+        <p>Développeur web passionné par l'innovation et les défis techniques.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Me trouver</h3>
+        <div class="social-links">
+          <a href="https://github.com/Jrmymdfk" target="_blank" rel="noopener noreferrer" class="social-link github" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-mdefk/" target="_blank" rel="noopener noreferrer" class="social-link linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.731-2.004 1.436-.103.25-.129.599-.129.949v5.42h-3.554s.047-8.733 0-9.633h3.554v1.36c-.009.015-.021.029-.03.042h.03v-.042c.425-.654 1.185-1.586 2.882-1.586 2.105 0 3.684 1.375 3.684 4.331v5.528zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.951.77-1.71 1.916-1.71 1.144 0 1.915.759 1.915 1.71 0 .951-.771 1.71-1.916 1.71zm1.6 11.597h-3.2V9.819h3.2v10.633zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Jérémy. Tous droits réservés.</p>
+    </div>
   </footer>
   <script src="script.js" defer></script>
 </body>

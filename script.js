@@ -418,6 +418,13 @@ function initCarouselAndPanel() {
         overlayImage.style.display = 'block';
       }
 
+      // Afficher l'image dans le proof-panel pour mobile/tablette
+      const proofPanelImage = document.getElementById('proof-panel-image');
+      if (thumbImage && thumbImage.src) {
+        proofPanelImage.src = thumbImage.src;
+        proofPanelImage.style.display = 'block';
+      }
+
       panel.classList.add('open');
       panel.setAttribute('aria-hidden', 'false');
       
