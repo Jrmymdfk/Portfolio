@@ -377,6 +377,7 @@ function initCarouselAndPanel() {
   const closeBtn = document.getElementById('proof-close');
   const overlay = document.getElementById('proof-overlay');
   const overlay1 = document.getElementById('proof-overlay-black');
+  const overlayBlur = document.getElementById('proof-overlay-blur');
   const overlayKeywords = document.getElementById('overlay-keywords');
   
   const setText = (id, value) => {
@@ -431,15 +432,52 @@ function initCarouselAndPanel() {
       // Activer overlay et keywords
       overlay.classList.add('active');
       overlay1.classList.add('active');
+      overlayBlur.classList.add('active');
       overlayKeywords.classList.add('active');
       
-      // Cloner et afficher les keywords dans l'overlay
-      const originalKeywords = document.querySelector('.keywords');
-      if (originalKeywords) {
-        const clonedKeywords = originalKeywords.cloneNode(true);
-        overlayKeywords.innerHTML = '';
-        overlayKeywords.appendChild(clonedKeywords);
-      }
+      // Créer une boucle infinie seamless pour les keywords
+      const setupInfiniteScroll = (container) => {
+        if (!container) return;
+        
+        // Vérifier si déjà configuré pour éviter les doublons
+        if (container._infiniteScrollSetup) return;
+        container._infiniteScrollSetup = true;
+        
+        // Récupérer les items originaux
+        const originalItems = Array.from(container.querySelectorAll('li'));
+        if (originalItems.length === 0) return;
+        
+        // Dupliquer les items plusieurs fois pour avoir une vraie continuité
+        originalItems.forEach(item => {
+          container.appendChild(item.cloneNode(true));
+        });
+        originalItems.forEach(item => {
+          container.appendChild(item.cloneNode(true));
+        });
+        
+        // Calculer la largeur totale du contenu original
+        const totalWidth = originalItems.reduce((acc, item) => {
+          return acc + item.offsetWidth + 32; // 32px = gap
+        }, 0);
+        
+        // Reset animé quand on atteint la fin
+        const animationDuration = container.classList.contains('keywords-top') ? 40000 : 45000; // en ms
+        const resetInterval = setInterval(() => {
+          // Réinitialiser la position sans breaking la fluidité
+          container.style.animation = 'none';
+          container.offsetHeight; // Trigger reflow
+          container.style.animation = '';
+        }, animationDuration);
+        
+        // Stocker l'interval pour le nettoyer plus tard
+        container._resetInterval = resetInterval;
+      };
+      
+      const keywordsTopContainer = overlayKeywords.querySelector('.keywords-top');
+      const keywordsBottomContainer = overlayKeywords.querySelector('.keywords-bottom');
+      
+      setupInfiniteScroll(keywordsTopContainer);
+      setupInfiniteScroll(keywordsBottomContainer);
     });
   });
 
@@ -448,6 +486,7 @@ function initCarouselAndPanel() {
     panel.setAttribute('aria-hidden', 'true');
     overlay.classList.remove('active');
     overlay1.classList.remove('active');
+    overlayBlur.classList.remove('active');
     overlayKeywords.classList.remove('active');
   });
 
@@ -459,6 +498,7 @@ function initCarouselAndPanel() {
         panel.setAttribute('aria-hidden', 'true');
         overlay.classList.remove('active');
         overlay1.classList.remove('active');
+        overlayBlur.classList.remove('active');
         overlayKeywords.classList.remove('active');
       }
     }
